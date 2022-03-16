@@ -1,0 +1,1 @@
+{"version":3,"file":"schema-update-store-input.d.ts","sourceRoot":"","sources":["schema-update-store-input.ts"],"names":[],"mappings":"AAMI;;GAEG;AACH,oBAAY,sBAAsB,GAAG;IACnC;;OAEG;IACH,MAAM,CAAC,EAAE,MAAM,CAAC;IAChB;;;OAGG;IACH,YAAY,EAAE,MAAM,CAAC;IACrB;;;OAGG;IACH,WAAW,EAAE,MAAM,CAAC;CACrB,GAAG,MAAM,CAAC,MAAM,EAAE,GAAG,CAAC,CAAC"}

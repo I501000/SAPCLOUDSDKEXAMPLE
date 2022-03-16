@@ -1,0 +1,1 @@
+{"version":3,"file":"signature-input.d.ts","sourceRoot":"","sources":["signature-input.ts"],"names":[],"mappings":"AAMI;;GAEG;AACH,oBAAY,cAAc,GAAG;IAC3B,aAAa,EAAE,MAAM,CAAC;IACtB,iBAAiB,EAAE,MAAM,CAAC;IAC1B,cAAc,EAAE,MAAM,CAAC;IACvB;;;OAGG;IACH,KAAK,EAAE,MAAM,CAAC;IACd,YAAY,EAAE,MAAM,CAAC;IACrB,oBAAoB,EAAE,MAAM,CAAC;CAC9B,GAAG,MAAM,CAAC,MAAM,EAAE,GAAG,CAAC,CAAC"}

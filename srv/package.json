@@ -1,0 +1,20 @@
+{
+    "name": "mymtaapp-srv",
+    "engines": {
+        "node": "14.x"
+    },
+    "dependencies": {
+        "@sap-cloud-sdk/core": "latest",
+        "@sap-cloud-sdk/openapi": "latest",
+        "@sap/cloud-sdk-vdm-outbound-delivery-v2-service": "^2.0.0",
+        "@sap/cloud-sdk-vdm-sales-order-service": "latest",
+        "@sap/xsenv": "latest",
+        "@sap/xssec": "latest",
+        "body-parser": "latest",
+        "express": "latest",
+        "passport": "latest"
+    },
+    "scripts": {
+        "start": "node server.js"
+    }
+}

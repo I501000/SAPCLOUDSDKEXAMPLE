@@ -1,0 +1,70 @@
+ID: mymtaapp
+_schema-version: "3.1"
+version: 0.0.1
+
+parameters:
+  enable-parallel-deployments: true
+
+modules:
+
+  - name: mymtaapp-srv
+    type: nodejs
+    path: srv
+    parameters:
+      disk-quota: 512M
+      memory: 256M
+    provides:
+      - name: srv_api
+        properties:
+          url: ${default-url}
+    requires:
+      - name: mymtaapp-uaa
+      - name: mymtaapp-dest
+
+  - name: mymtaapp-app
+    type: html5
+    path: app
+    parameters:
+      disk-quota: 512M
+      memory: 256M
+    requires:
+      - name: mymtaapp-uaa
+      - name: srv_api
+        group: destinations
+        properties:
+          name: srv
+          url: ~{url}
+          forwardAuthToken: true
+resources:
+  - name: mymtaapp-uaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+  - name: mymtaapp-dest
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+      config:
+        init_data:
+          instance:
+            existing_destinations_policy: ignore
+            destinations:
+              # - Name: O5P
+
+              - Name: mymtaapp-s4hc-api
+                Description: S/4HANA Cloud
+                URL: https://my300018-api.saps4hanacloud.cn
+                Type: HTTP
+                ProxyType: Internet
+                Authentication: NoAuthentication
+                URL.headers.APIKey: 3vEDIc8EhHiYUJOESVKR0JycV3VrCdNB
+                URL.headers.Application-Interface-Key: <SetValueInCockpit>
+              - Name: mymtaapp-nw
+                Description: Northwind
+                URL: https://services.odata.org/v2/Northwind/Northwind.svc
+                Type: HTTP
+                ProxyType: Internet
+                Authentication: NoAuthentication

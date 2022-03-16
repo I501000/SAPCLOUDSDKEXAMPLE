@@ -1,0 +1,46 @@
+{
+  "xsappname": "mymtaapp",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.User",
+      "description": "User"
+    },
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Admin"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "User",
+      "description": "User",
+      "scope-references": [
+        "$XSAPPNAME.User"
+      ]
+    },
+    {
+      "name": "Admin",
+      "description": "Admin",
+      "scope-references": [
+        "$XSAPPNAME.Admin"
+      ]
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "mymtaapp_User",
+      "description": "mymtaapp User",
+      "role-template-references": [
+        "$XSAPPNAME.User"
+      ]
+    },
+    {
+      "name": "mymtaapp_Admin",
+      "description": "mymtaapp Admin",
+      "role-template-references": [
+        "$XSAPPNAME.Admin"
+      ]
+    }
+  ]
+}
